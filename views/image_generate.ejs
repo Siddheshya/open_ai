@@ -80,7 +80,7 @@
        </nav>
        <center>
        <button class="img_div">
-       <a class="img_gen" href="/">Home</a>
+       <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
     </button>
 </center>
     <main>
@@ -94,10 +94,10 @@
             <input type="text" name="Query" id="Query"></input> 
         </div>
         <center>
-            <input class="btn" type="submit"></button>
-        </center>
+                    <input class="btn" type="submit"></button>
+                </center>
             <% if(show) { %>
-                <div class="ans">
+                <div>
                     <img src = "<%= url %>"/></>
                 </div>
             <% } %>    

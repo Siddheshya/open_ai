@@ -15,7 +15,6 @@ exports.getAnswer = (req, res, next) => {
       temperature: 1,
     })
     .then((response) => {
-      console.log(response)
       return res.render("home", {
         pageTitle: "home",
         path: "home",
@@ -36,9 +35,10 @@ exports.home = (req, res, next) => {
   });
 };
 exports.callOpenai = (req, res, next) => {
+  const text = req.body.Query
   const response = openai
     .createImage({
-      prompt: "Coding Monkey",
+      prompt: text,
       n: 1,
       size: "256x256",
     })
