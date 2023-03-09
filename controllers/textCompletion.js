@@ -15,7 +15,7 @@ exports.getAnswer = (req, res, next) => {
       temperature: 1,
     })
     .then((response) => {
-      // console.log(response)
+      console.log(response)
       return res.render("home", {
         pageTitle: "home",
         path: "home",
