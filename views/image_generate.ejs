@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= pageTitle %></title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main-header__nav {
+        height: 40px;
+        width: 100vw;
+        background-color: #0C63E7;
+        top: 0;
+        margin-top: 0;
+    }
+    .header-text{
+        padding: 10px;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+    }
+    .btn{
+        padding: 5px 25px;
+        margin-top: 25px;
+        background-color: #0C63E7;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+    .img_gen{
+        text-decoration: none;
+        color: white;
+
+    }
+    .img_div{
+        padding: 5px 25px;
+        background-color: #0C63E7;
+        margin-top: 30px;
+        border: none;
+    }
+    .img_div:hover{
+        opacity: 0.8;
+    }
+    .form-control{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+    }
+    .label{
+        font-size:22px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+    #Query{
+        height: 25px;
+        width: 40vw;
+        padding: 7px;
+    }
+    .ans{
+        margin: 40px;
+        padding: 20px;
+        border: 1px solid black;
+    }
+
+</style>
+
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <center><p class="header-text">Open AI Image Generator</p></center>
+       </nav>
+       <center>
+       <button class="img_div">
+       <a class="img_gen" href="/">Home</a>
+    </button>
+</center>
+    <main>
+        <form class = "Input-Text>" action = "/image_generate" method = "POST">
+            <center>
+                <div class="label">
+                    <label for="Query">Image-Query</label>
+                </div>
+        </center>
+        <div class="form-control">
+            <input type="text" name="Query" id="Query"></input> 
+        </div>
+        <center>
+            <input class="btn" type="submit"></button>
+        </center>
+            <% if(show) { %>
+                <div class="ans">
+                    <img src = "<%= url %>"/></>
+                </div>
+            <% } %>    
+    </main>
+</body>
+<script src="/js/main.js"></script>
+</body>
+
+</html>
