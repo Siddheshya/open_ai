@@ -36,6 +36,7 @@ exports.home = (req, res, next) => {
 };
 exports.callOpenai = (req, res, next) => {
   const text = req.body.Query
+  console.log(text)
   const response = openai
     .createImage({
       prompt: text,
